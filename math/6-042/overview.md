@@ -2,8 +2,6 @@
 title: "6-042"
 ---
 
-# 6-042 Notes
-
 <ul>
 {% for note in site.6-042 %}
   <li><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
