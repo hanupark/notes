@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "6.042 Overview"
 ---
 
