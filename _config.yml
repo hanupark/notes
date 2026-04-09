@@ -1,3 +1,5 @@
+collections_dir: _collections
+
 collections:
   6-042:
     output: true
