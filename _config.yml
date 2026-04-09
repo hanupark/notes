@@ -1,3 +1,5 @@
+theme: jekyll-theme-primer
+
 collections_dir: _collections
 
 collections:
@@ -7,3 +9,4 @@ collections:
     output: true
   utah-video-course:
     output: true
+
