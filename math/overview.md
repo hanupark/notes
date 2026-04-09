@@ -1,3 +1,3 @@
-Mostly recovering everything I failed to absorb in school... I had a rough time :P
+Mostly recovering everything I failed to absorb in school and building a base for other interests...
 
 - [6.042 MIT](/notes/math/6-042/intro.md)
