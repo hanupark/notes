@@ -1,3 +1,6 @@
+---
+title: "shadertoy-tutorial"
+---
 
 ### [episode 2](https://www.youtube.com/watch?v=GgGBR4z8C9o)
 
