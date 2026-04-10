@@ -1,0 +1,255 @@
+I"�<h3 id="lecture-1">lecture 1</h3>
+<p><a href="https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture01-2024feb06_mp4/">video</a>
+|
+<a href="https://courses.csail.mit.edu/6.042/spring18/mcs.pdf">textbook</a> sections 1.0–1.7, 3.1–3.3, 3.6</p>
+
+<p>a mathematical proof is a verification of a <em>==proposition==</em> by a chain of <em>==logical deductions==</em> from a base set of <em>==axioms==</em>.</p>
+
+<p>a ==proposition== is a statement that is true or false.</p>
+<ul>
+  <li>“Today is Tuesday”</li>
+  <li>“Today is Thursday”</li>
+  <li>2 + 3 = 5</li>
+  <li>2 + 3 = 7</li>
+</ul>
+
+<p>a ==predicate== is a proposition that depends on variables, like a parameterized proposition. the statement “$p$ is prime” is NOT a proposition because it is incomplete information. What $p$ are we talking about?</p>
+
+<p>question: is this expression a predicate or proposition?</p>
+<ul>
+  <li>$\forall n \in \mathbb{N}(n^2+n+41$ is prime$)$</li>
+</ul>
+
+<p>predicates are like equations whose variables have not been filled in yet. this (n^2+n+41$ is prime$)$ is a predicate. we don’t know if this is true or false because we don’t know what n is. The $\forall n \in \mathbb{N}$ or “for all n in the natural numbers” transforms this into a proposition. we know what n is.</p>
+
+<p>question: is $\forall n \in \mathbb{N}(n^2+n+41$ is prime$)$ true or false?</p>
+
+<p>start with 0, and calculate up. turns out for $n = 40$, $n^2+n+41$ is not prime. 40 is in $\mathbb{N}$, so it is false.</p>
+
+<p>Goldbach’s Conjecture says every even number greater than 2 is the sum of two primes. ==Conjecture== means that we do not know if it is true.</p>
+
+<p>consider A and B to be propositions.</p>
+
+<p>==not==</p>
+
+<p>| A   | not A, $\neg A$, and $\overline{A}$ |
+| — | ———————————– |
+| T   | F                                   |
+| F   | T                                   |
+==operators==</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>A AND B, $A \land B$</th>
+      <th>A OR B, $A \lor B$</th>
+      <th>A XOR B</th>
+      <th>A NAND B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>F</td>
+      <td>F</td>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>==implication==</p>
+
+<p>| A   | B   | A implies B, $A \rightarrow B$, if A then B |
+| — | — | ——————————————- |
+| T   | T   | T                                           |
+| F   | T   | T                                           |
+| T   | F   | F                                           |
+| F   | F   | T                                           |
+A does not cause B. they exist independently. A is either true or false. B is either true or false. A implies B is either true or false. once we know whether A and B are true or false, we know whether if A implies B is true or false. for example, x &lt; 3 implies x &lt; 4.</p>
+
+<p>note: $(A \rightarrow B) = (B \lor\neg A)$. A implies B is an equivalent expression to B or not A. the operators interact.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>$A \rightarrow B$</th>
+      <th>$B \lor\neg A$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>take $A \rightarrow B$ as the base expression:</p>
+<ul>
+  <li>$\neg A \rightarrow \neg B$ is the “==inverse==”</li>
+  <li>$B \rightarrow A$ is the “==converse==”</li>
+  <li>$\neg B \rightarrow \neg A$ is the “==contrapositive==”</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>$A \rightarrow B$</th>
+      <th>$\neg A \rightarrow \neg B$</th>
+      <th>$B \rightarrow A$</th>
+      <th>$\neg B \rightarrow \neg A$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>F</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+      <td>T</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>the contrapositive of any expression is equivalent to itself.
+notice that $A \rightarrow B$ and the contrapositive $\neg B \rightarrow \neg A$ are equivalent expressions.
+notice that $\neg A \rightarrow \neg B$ and its contrapositive $B \rightarrow A$ are also equivalent expressions.</p>
+
+<p>a ==set== is a collection of objects. order does not matter. repeats do not matter.
+A = ${6,1,2,0} = {2,1,6,0} = {6,1,2,0,0}$</p>
+
+<p>set examples:</p>
+<ul>
+  <li>natural numbers $\mathbb{N} = {0, 1, 2, 3, \dots}$</li>
+  <li>integers $\mathbb{A} = {-3, -2, -1, 0, 1, 2, 3, \dots}$</li>
+  <li>rational numbers $\mathbb{Q}$</li>
+  <li>real numbers $\mathbb{N}$</li>
+  <li>complex numbers $\mathbb{N}$</li>
+  <li>empty set $\emptyset$. it is a subset of all sets but not an element of all sets.</li>
+</ul>
+
+<p>question: is $3 \in B$?</p>
+<ul>
+  <li>B = ${2,{3,4},\emptyset}$
+no, ${ 3,4 }$ is in B.</li>
+</ul>
+
+<p>$A \subseteq B$ means that A is a ==subset or equal to== B. all elements of A are in the elements of B, and B may contain more.</p>
+
+<p>questions:</p>
+<ul>
+  <li>${2,1} \subseteq A$? yes, check if 2 and 1 are in A.</li>
+  <li>$\emptyset \subseteq A$? yes, since there are no elements to check, nothing violates the condition.</li>
+</ul>
+
+<p>operators:</p>
+<ul>
+  <li>==union== = $A \cup B = {6,1,2,0, {3,4},\emptyset}$. Combine together all elements of A and B.</li>
+  <li>==intersection== = $A\cap B = { 2 }$. Only keep elements present in both A and B.</li>
+  <li>==difference== = $A - B$ or $A\textbackslash B = {6,1,0}$. Take away any elements in B from elements in A.</li>
+</ul>
+
+<p>set builder notation:</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>{ $n \in \mathbb{N}$</td>
+          <td>isprime($n$) } is the subset of natural numbers that satisfy the predicate isprime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>==tuples== is a collection of elements. order matters. repeats matters.
+$(6,1,2,0) \neq (2,1,6,0) \neq (6,1,2,0,0)$</p>
+
+<p>an ==axiom/postulate== is a proposition we assume is true. pretty much, you can always assume whatever you want and make a theory from it, but that’s not interesting.</p>
+
+<p>a set of axioms is <em>consistent</em> when you can’t prove both $A$ and $\neg A$. if proven, then by principle of explosion, everything becomes provable (not good for interesting theories).</p>
+
+<p>a set of axioms is <em>complete</em> when every statement expressible in the system is either provable or refutable, so for every $A$ either $A$ or $\neg A$ is provable.</p>
+
+<p>Gödel’s Incompleteness Theorem states any consistent formal axiomatized system is incomplete. This means there are expressions that are true in standard math that are not provable in the system.</p>
+
+<p>For class, the axioms that can be assumed roughly encompass high school math. “The product of two even numbers is even. I know this from high school.”</p>
+:ET

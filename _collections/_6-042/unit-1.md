@@ -4,6 +4,7 @@ title: "Unit 1"
 
 ### lecture 1
 [video](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture01-2024feb06_mp4/)
+|
 [textbook](https://courses.csail.mit.edu/6.042/spring18/mcs.pdf) sections 1.0–1.7, 3.1–3.3, 3.6
 
 a mathematical proof is a verification of a *==proposition==* by a chain of *==logical deductions==* from a base set of *==axioms==*.
